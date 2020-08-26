@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/SmartCoder"/>
+    <qresource prefix="/skins">
+        <file>Resources/skins/skins11.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>Resources/qss/MyTitle.css</file>
+        <file>Resources/qss/myapp.css</file>
+    </qresource>
+    <qresource prefix="/imgs">
+        <file>Resources/imgs/MyTitle/close.png</file>
+        <file>Resources/imgs/MyTitle/max.png</file>
+        <file>Resources/imgs/MyTitle/min.png</file>
+        <file>Resources/imgs/MyTitle/restore.png</file>
+        <file>Resources/imgs/gencode.png</file>
+        <file>Resources/imgs/plugin.png</file>
+        <file>Resources/imgs/disassem.png</file>
+        <file>Resources/imgs/net.png</file>
+        <file>Resources/imgs/mine.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>Resources/icons/icon11.png</file>
+        <file>Resources/icons/icon1.png</file>
+        <file>Resources/icons/icon.png</file>
+    </qresource>
+</RCC>
