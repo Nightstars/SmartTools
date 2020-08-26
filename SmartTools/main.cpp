@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 
 	QSplashScreen* splash = new QSplashScreen;
-	splash->setPixmap(QPixmap(":/icons/Resources/icons/icon1.png"));
+	splash->setPixmap(QPixmap(":/icons/Resources/icons/micon.png"));
 	splash->show();
 	SmartTools w;
 	QPropertyAnimation* animation = new QPropertyAnimation(&w, "windowOpacity");

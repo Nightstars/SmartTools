@@ -56,7 +56,7 @@ void SmartTools::initTitleBar()
 {
 	// 设置标题栏跑马灯效果，可以不设置;
 	//m_titleBar->setTitleRoll();
-	m_titleBar->setTitleIcon(":/icons/Resources/icons/icon.png", {18,18});
+	m_titleBar->setTitleIcon(":/icons/Resources/icons/micon.png", {18,18});
 	m_titleBar->setTitleContent(QStringLiteral("SmartTools"));
 	m_titleBar->setButtonType(MIN_MAX_BUTTON);
 	m_titleBar->setTitleWidth(this->width());
