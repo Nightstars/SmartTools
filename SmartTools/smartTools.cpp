@@ -42,6 +42,7 @@ SmartTools::SmartTools(QWidget *parent)
 			Qt::IgnoreAspectRatio,
 			Qt::SmoothTransformation)));             // 使用平滑的缩放方式
 	this->setPalette(palette);
+
 #pragma endregion
 
 #pragma region 初始化
