@@ -40,6 +40,9 @@
     <ClCompile Include="smartTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="flatui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="basewindow.h">
@@ -49,6 +52,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="smartTools.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="flatui.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

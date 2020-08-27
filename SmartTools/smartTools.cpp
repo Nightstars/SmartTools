@@ -1,4 +1,5 @@
 ﻿#include "smartTools.h"
+
 using namespace std;
 #pragma region 界面
 SmartTools::SmartTools(QWidget *parent)
@@ -20,6 +21,11 @@ SmartTools::SmartTools(QWidget *parent)
 	ui.net_label_widget->installEventFilter(this);    // 安装事件过滤器
 	ui.mine_label_widget->installEventFilter(this);    // 安装事件过滤器
 	ui.main_page->setCurrentIndex(0);
+	FlatUI::setPushButtonQss(ui.pushButton_disassembly, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
+	FlatUI::setPushButtonQss(ui.pushButton_selectdllfile, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
+	FlatUI::setPushButtonQss(ui.pushButton_changedlloutputpath, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
+	FlatUI::setLineEditQss(ui.dllfileselected_lineEdit, 5, 2, "#DCE4EC", "#1ABC9C");
+	FlatUI::setLineEditQss(ui.lineEdit_dlloutputprojpath, 5, 2, "#DCE4EC", "#1ABC9C");
 #pragma endregion
 
 /*#pragma region 设置圆角窗体
@@ -144,7 +150,7 @@ void SmartTools::onPushButton_disassemblyClicked() {
 //选择dll文件
 void SmartTools::onPushButton_selectdllfileClicked() {
 	QString fileName = QFileDialog::getOpenFileName(
-		this, QStringLiteral("SmartCoder-选择文件"), "C:\\", QStringLiteral("Image files(*.dll *.exe);;All files (*.*)"));
+		this, QStringLiteral("SmartTools-选择文件"), "C:\\", QStringLiteral("Image files(*.dll *.exe);;All files (*.*)"));
 	if (fileName.isEmpty())
 	{
 		QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("打开文件失败!"));

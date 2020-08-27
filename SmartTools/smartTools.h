@@ -14,6 +14,7 @@
 #include <string>  // for std::string
 #include <vector>  // for std::vector
 #include <iostream>
+#include "flatui.h"
 
 class SmartTools : public BaseWindow
 {

@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="basewindow.cpp" />
+    <ClCompile Include="flatui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mytitlebar.cpp" />
     <ClCompile Include="smartTools.cpp" />
@@ -106,6 +107,7 @@
     <QtMoc Include="mytitlebar.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="flatui.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
