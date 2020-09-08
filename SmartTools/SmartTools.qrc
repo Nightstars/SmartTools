@@ -17,6 +17,13 @@
         <file>Resources/imgs/disassem.png</file>
         <file>Resources/imgs/net.png</file>
         <file>Resources/imgs/mine.png</file>
+        <file>Resources/imgs/apps.png</file>
+        <file>Resources/imgs/appstore.png</file>
+        <file>Resources/imgs/apps_color.png</file>
+        <file>Resources/imgs/appstore_color.png</file>
+        <file>Resources/imgs/disassem_color.png</file>
+        <file>Resources/imgs/mine_color.png</file>
+        <file>Resources/imgs/net_color.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>Resources/icons/icon11.png</file>

@@ -73,19 +73,19 @@ void SmartTools::initTitleBar()
 #pragma region 初始化控件
 void SmartTools::initControl()
 {
-	myutils.setIcon(ui.mianlabel_icon, ":/imgs/Resources/imgs/gencode.png", { 40,40 });
-	myutils.setLabelContent(ui.mianlabel_txt, QStringLiteral("代码生成"));
+	myutils.setIcon(ui.mianlabel_icon, ":/imgs/Resources/imgs/apps_color.png", { 40,40 });
+	myutils.setLabelContent(ui.mianlabel_txt, QStringLiteral("实用工具"));
 	ui.mainframe_verticalLayout->setAlignment(Qt::AlignHCenter);
-	myutils.setIcon(ui.pluginlabel_icon, ":/imgs/Resources/imgs/plugin.png", { 40,40 });
-	myutils.setLabelContent(ui.pluginlabel_txt, QStringLiteral("插件中心"));
+	myutils.setIcon(ui.pluginlabel_icon, ":/imgs/Resources/imgs/appstore_color.png", { 40,40 });
+	myutils.setLabelContent(ui.pluginlabel_txt, QStringLiteral("应用中心"));
 	ui.pluginframe_verticalLayout->setAlignment(Qt::AlignHCenter);
-	myutils.setIcon(ui.disassemlabel_icon, ":/imgs/Resources/imgs/disassem.png", { 40,40 });
+	myutils.setIcon(ui.disassemlabel_icon, ":/imgs/Resources/imgs/disassem_color.png", { 40,40 });
 	myutils.setLabelContent(ui.disassemlabel_txt, QStringLiteral("反汇编"));
 	ui.disassemframe_verticalLayout->setAlignment(Qt::AlignHCenter);
-	myutils.setIcon(ui.netlabel_icon, ":/imgs/Resources/imgs/net.png", { 40,40 });
+	myutils.setIcon(ui.netlabel_icon, ":/imgs/Resources/imgs/net_color.png", { 40,40 });
 	myutils.setLabelContent(ui.netlabel_txt, QStringLiteral("内网穿透"));
 	ui.netframe_verticalLayout->setAlignment(Qt::AlignHCenter);
-	myutils.setIcon(ui.minelabel_icon, ":/imgs/Resources/imgs/mine.png", { 40,40 });
+	myutils.setIcon(ui.minelabel_icon, ":/imgs/Resources/imgs/mine_color.png", { 40,40 });
 	myutils.setLabelContent(ui.minelabel_txt, QStringLiteral("我的"));
 	ui.mineframe_verticalLayout->setAlignment(Qt::AlignHCenter);
 	//加载样式表
