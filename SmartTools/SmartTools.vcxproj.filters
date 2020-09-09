@@ -75,11 +75,11 @@
     <ResourceCompile Include="SmartTools.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\icons\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <QtUic Include="smarttools.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\icons\micon.ico" />
   </ItemGroup>
 </Project>

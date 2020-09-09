@@ -11,6 +11,9 @@ SmartTools::SmartTools(QWidget *parent)
 	ui.setupUi(this);
 	// 设置无边框
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
+
+	QIcon icon(":/icons/Resources/icons/micon.png");
+	setWindowIcon(icon);
 	// 初始化标题栏;
 	initTitleBar();
 	//设置窗体大小
@@ -150,10 +153,10 @@ void SmartTools::onPushButton_disassemblyClicked() {
 //选择dll文件
 void SmartTools::onPushButton_selectdllfileClicked() {
 	QString fileName = QFileDialog::getOpenFileName(
-		this, QStringLiteral("SmartTools-选择文件"), "C:\\", QStringLiteral("Image files(*.dll *.exe);;All files (*.*)"));
+		this, QStringLiteral("SmartTools-选择文件"), "C:\\", QStringLiteral("Image files(*.dll *.exe);All files (*.*)"));
 	if (fileName.isEmpty())
 	{
-		QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("打开文件失败!"));
+		QMessageBox::warning(NULL, QStringLiteral("警告"), QStringLiteral("打开文件失败!"));
 		return;
 	}
 	else

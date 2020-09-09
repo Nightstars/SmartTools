@@ -6,7 +6,9 @@
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-
+	QIcon icon(":/icons/Resources/icons/micon.png");
+	// 设置程序运行时任务栏的图标。不过该图标并不是程序图标
+	a.setWindowIcon(icon);
 	QSplashScreen* splash = new QSplashScreen;
 	splash->setPixmap(QPixmap(":/icons/Resources/icons/micon.png"));
 	splash->show();
