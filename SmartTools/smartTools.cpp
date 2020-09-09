@@ -24,33 +24,35 @@ SmartTools::SmartTools(QWidget *parent)
 	ui.net_label_widget->installEventFilter(this);    // 安装事件过滤器
 	ui.mine_label_widget->installEventFilter(this);    // 安装事件过滤器
 	ui.main_page->setCurrentIndex(0);
-	FlatUI::setPushButtonQss(ui.pushButton_disassembly, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
+	FlatUI::setPushButtonQssLg(ui.pushButton_disassembly, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6",25);
 	FlatUI::setPushButtonQss(ui.pushButton_selectdllfile, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
 	FlatUI::setPushButtonQss(ui.pushButton_changedlloutputpath, 5, 8, "#1ABC9C", "#E6F8F5", "#2EE1C1", "#FFFFFF", "#16A086", "#A7EEE6");
 	FlatUI::setLineEditQss(ui.dllfileselected_lineEdit, 5, 2, "#DCE4EC", "#1ABC9C");
 	FlatUI::setLineEditQss(ui.lineEdit_dlloutputprojpath, 5, 2, "#DCE4EC", "#1ABC9C");
+	ui.stackedWidget_2->setAttribute(Qt::WA_TranslucentBackground);
 #pragma endregion
 
-/*#pragma region 设置圆角窗体
-		QBitmap bmp(this->size());
-		bmp.fill();
-		QPainter p(&bmp);
-		p.setRenderHint(QPainter::Antialiasing);
-		p.setPen(Qt::NoPen);
-		p.setBrush(Qt::black);
-		p.drawRoundedRect(bmp.rect(), 7, 7);
-		setMask(bmp);
-#pragma endregion*/
+//#pragma region 设置圆角窗体
+//		QBitmap bmp(this->size());
+//		bmp.fill();
+//		QPainter p(&bmp);
+//		p.setRenderHint(QPainter::Antialiasing);
+//		p.setPen(Qt::NoPen);
+//		p.setBrush(Qt::black);
+//		p.drawRoundedRect(bmp.rect(), 7, 7);
+//		setMask(bmp);
+//#pragma endregion
 
 #pragma region 设置窗体背景
-	this->setAutoFillBackground(true); // 这句要加上, 否则可能显示不出背景图.
-	QPalette palette = this->palette();
-	palette.setBrush(backgroundRole(),
-	QBrush(QPixmap(":/skins/Resources/skins/skins11.png").scaled(// 缩放背景图.
-			this->size(),
-			Qt::IgnoreAspectRatio,
-			Qt::SmoothTransformation)));             // 使用平滑的缩放方式
-	this->setPalette(palette);
+	this->setAttribute(Qt::WA_StyledBackground);
+	//this->setAutoFillBackground(true); // 这句要加上, 否则可能显示不出背景图.
+	//QPalette palette = this->palette();
+	//palette.setBrush(backgroundRole(),
+	//QBrush(QPixmap(":/skins/Resources/skins/skins11.png").scaled(// 缩放背景图.
+	//		this->size(),
+	//		Qt::IgnoreAspectRatio,
+	//		Qt::SmoothTransformation)));             // 使用平滑的缩放方式
+	//this->setPalette(palette);
 
 #pragma endregion
 

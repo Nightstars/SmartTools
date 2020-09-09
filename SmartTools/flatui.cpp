@@ -19,12 +19,34 @@ QString FlatUI::setPushButtonQss(QPushButton *btn, int radius, int padding,
                                     const QString &pressedTextColor)
 {
     QStringList list;
-    list.append(QString("QPushButton{border-style:none;padding:%1px;border-radius:%2px;color:%3;background:%4;}")
+    list.append(QString("QPushButton{border-style:none;padding:%1px;border-radius:%2px;color:%3;background:%4;font:bold;}")
                 .arg(padding).arg(radius).arg(normalTextColor).arg(normalColor));
     list.append(QString("QPushButton:hover{color:%1;background:%2;}")
                 .arg(hoverTextColor).arg(hoverColor));
     list.append(QString("QPushButton:pressed{color:%1;background:%2;}")
                 .arg(pressedTextColor).arg(pressedColor));
+
+    QString qss = list.join("");
+    btn->setStyleSheet(qss);
+    return qss;
+}
+
+QString FlatUI::setPushButtonQssLg(QPushButton* btn, int radius, int padding,
+    const QString& normalColor,
+    const QString& normalTextColor,
+    const QString& hoverColor,
+    const QString& hoverTextColor,
+    const QString& pressedColor,
+    const QString& pressedTextColor,
+    int fontsize)
+{
+    QStringList list;
+    list.append(QString("QPushButton{border-style:none;padding:%1px;border-radius:%2px;color:%3;background:%4;font:bold;font-size:%5px;}")
+        .arg(padding).arg(radius).arg(normalTextColor).arg(normalColor).arg(fontsize));
+    list.append(QString("QPushButton:hover{color:%1;background:%2;}")
+        .arg(hoverTextColor).arg(hoverColor));
+    list.append(QString("QPushButton:pressed{color:%1;background:%2;}")
+        .arg(pressedTextColor).arg(pressedColor));
 
     QString qss = list.join("");
     btn->setStyleSheet(qss);

@@ -73,10 +73,22 @@ QLabel#minelabel_txt
 /*反汇编页面*/
 
 QLabel#dllfileaddr_label{
+	font:bold;
+	color:gray;
     font: 18pt;
 	font-family:'楷体';
 }
 QLabel#label_dllprojoutputpath{
+	font:bold;
+	color:gray;
     font: 18pt;
 	font-family:'楷体';
+}
+QLabel#pushButton_disassembly{
+    font: 24px;
+	font-family:'楷体';
+}
+/*设置背景图片*/
+#SmartCoderClass{
+	border-image:url(:/skins/Resources/skins/skins11.png);
 }

@@ -31,4 +31,8 @@
         <file>Resources/icons/icon.png</file>
         <file>Resources/icons/micon.png</file>
     </qresource>
+    <qresource prefix="/fonts">
+        <file>Resources/fonts/pingfang.ttf</file>
+        <file>Resources/fonts/tengxiangcongcongti.ttf</file>
+    </qresource>
 </RCC>

@@ -55,6 +55,17 @@ public:
                                     const QString &hoverTextColor = "#F0F0F0",      //悬停文字颜色
                                     const QString &pressedColor = "#2D3E50",        //按下颜色
                                     const QString &pressedTextColor = "#B8C6D1");   //按下文字颜色
+     //设置按钮样式
+    static QString setPushButtonQssLg(QPushButton* btn,                               //按钮对象
+        int radius = 5,                                 //圆角半径
+        int padding = 8,                                //间距                               
+        const QString& normalColor = "#34495E",         //正常颜色
+        const QString& normalTextColor = "#FFFFFF",     //文字颜色
+        const QString& hoverColor = "#4E6D8C",          //悬停颜色
+        const QString& hoverTextColor = "#F0F0F0",      //悬停文字颜色
+        const QString& pressedColor = "#2D3E50",        //按下颜色
+        const QString& pressedTextColor = "#B8C6D1",    //按下文字颜色
+        int fontsize = 8);                               //字体大小
 
     //设置文本框样式
     static QString setLineEditQss(QLineEdit *txt,                                   //文本框对象

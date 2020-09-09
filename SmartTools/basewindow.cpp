@@ -72,16 +72,6 @@ void BaseWindow::onButtonRestoreClicked()
     QSize windowSize;
     m_titleBar->getRestoreInfo(windowPos, windowSize);
     this->setGeometry(QRect(windowPos, windowSize));
-    #pragma region 设置窗体背景
-    this->setAutoFillBackground(true); // 这句要加上, 否则可能显示不出背景图.
-    QPalette palette = this->palette();
-    palette.setBrush(backgroundRole(),
-        QBrush(QPixmap(":/skins/Resources/skins/skins11.png").scaled(// 缩放背景图.
-            this->size(),
-            Qt::IgnoreAspectRatio,
-            Qt::SmoothTransformation)));             // 使用平滑的缩放方式
-    this->setPalette(palette);
-    #pragma endregion
 }
 
 void BaseWindow::onButtonMaxClicked()
@@ -90,16 +80,6 @@ void BaseWindow::onButtonMaxClicked()
     QRect desktopRect = QApplication::desktop()->availableGeometry();
     QRect FactRect = QRect(desktopRect.x() - 3, desktopRect.y() - 3, desktopRect.width() + 6, desktopRect.height() + 6);
     setGeometry(FactRect);
-    #pragma region 设置窗体背景
-    this->setAutoFillBackground(true); // 这句要加上, 否则可能显示不出背景图.
-    QPalette palette = this->palette();
-    palette.setBrush(backgroundRole(),
-        QBrush(QPixmap(":/skins/Resources/skins/skins11.png").scaled(// 缩放背景图.
-            this->size(),
-            Qt::IgnoreAspectRatio,
-            Qt::FastTransformation)));             // 使用平滑的缩放方式
-    this->setPalette(palette);
-    #pragma endregion
 }
 
 void BaseWindow::onButtonCloseClicked()
