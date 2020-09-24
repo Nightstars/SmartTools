@@ -5,7 +5,6 @@ using namespace std;
 SmartTools::SmartTools(QWidget *parent)
 	: BaseWindow(parent)
 {
-#pragma endregion
 
 #pragma region 全局配置
 	ui.setupUi(this);
@@ -63,6 +62,8 @@ SmartTools::SmartTools(QWidget *parent)
 	initConnections();
 #pragma endregion
 }
+#pragma endregion
+
 #pragma region 初始化标题栏
 void SmartTools::initTitleBar()
 {
@@ -163,6 +164,81 @@ void SmartTools::initControl()
 		QVBoxLayout* mainLayout = new QVBoxLayout(this);
 		mainLayout->addWidget(this->m_qscarScroll);
 		ui.myapps_page->setLayout(mainLayout);
+	#pragma endregion
+
+	#pragma region 初始化文本工具界面
+		m_codeEditor = new CodeEditor();
+		m_codeEditor->setAttribute(Qt::WA_TranslucentBackground);
+		verticalScrollBar=m_codeEditor->verticalScrollBar();
+		verticalScrollBar->setStyleSheet("QScrollBar:vertical"
+			"{"
+			"width:8px;"
+			"background:rgba(0,0,0,0%);"
+			"margin:0px,0px,0px,0px;"
+			"padding-top:9px;"
+			"padding-bottom:9px;"
+			"}"
+			"QScrollBar::handle:vertical"
+			"{"
+			"width:8px;"
+			"background:rgba(0,0,0,25%);"
+			" border-radius:4px;"
+			"min-height:20;"
+			"}"
+			"QScrollBar::handle:vertical:hover"
+			"{"
+			"width:8px;"
+			"background:rgba(0,0,0,50%);"
+			" border-radius:4px;"
+			"min-height:20;"
+			"}"
+			"QScrollBar::add-line:vertical"
+			"{"
+			"height:9px;width:8px;"
+			"border-image:url(:/images/a/3.png);"
+			"subcontrol-position:bottom;"
+			"}"
+			"QScrollBar::sub-line:vertical"
+			"{"
+			"height:9px;width:8px;"
+			"border-image:url(:/images/a/1.png);"
+			"subcontrol-position:top;"
+			"}"
+			"QScrollBar::add-line:vertical:hover"
+			"{"
+			"height:9px;width:8px;"
+			"border-image:url(:/images/a/4.png);"
+			"subcontrol-position:bottom;"
+			"}"
+			"QScrollBar::sub-line:vertical:hover"
+			"{"
+			"height:9px;width:8px;"
+			"border-image:url(:/images/a/2.png);"
+			"subcontrol-position:top;"
+			"}"
+			"QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical"
+			"{"
+			"background:rgba(0,0,0,10%);"
+			"border-radius:4px;"
+			"}"
+		);
+		m_codeEditor->setStyleSheet("font-size:18px;");
+		m_qhblt_txttool = new QHBoxLayout();
+		m_qvblt_txttool_btns = new QVBoxLayout();
+		m_qphbtn_txttool_btns_easydone = new QPushButton();
+		m_qphbtn_txttool_btns_easydone->setText(QStringLiteral("简单处理"));
+		m_qvblt_txttool_btns->addWidget(m_qphbtn_txttool_btns_easydone);
+		m_qvblt_txttool_btns->addSpacerItem(new QSpacerItem(20, 20, QSizePolicy::Fixed,QSizePolicy::Expanding));
+		m_qvblt_txttool_btns->setMargin(15);
+		m_qhblt_txttool->addWidget(m_codeEditor);
+		//m_qhblt_txttool->addWidget(m_qphbtn_txttool_btns_easydone);
+		//m_qhblt_txttool->addWidget(m_qphbtn_txttool_btns_easydone1);
+		m_qhblt_txttool->addLayout(m_qvblt_txttool_btns);
+		//m_qhblt_txttool->setStretchFactor(m_codeEditor, 2);
+		//m_qhblt_txttool->setStretchFactor(m_qvblt_txttool_btns, 1);
+		txttool_main_layout = new QHBoxLayout();
+		txttool_main_layout->addLayout(m_qhblt_txttool);
+		ui.txt_tool->setLayout(txttool_main_layout);
 	#pragma endregion
 
 }
@@ -278,6 +354,7 @@ void SmartTools::onPushButton_changedlloutputpathClicked() {
 #pragma region 事件过滤器
 bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 {
+	#pragma region 首页
 	if (obj == ui.main_label_widget)//指定某个QLabel
 	{
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
@@ -304,6 +381,9 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 应用中心
 	else if (obj == ui.plugin_label_widget) {
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
 		{
@@ -329,6 +409,9 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 反汇编
 	else if (obj == ui.disassem_label_widget) {
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
 		{
@@ -354,6 +437,9 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 内网穿透
 	else if (obj == ui.net_label_widget) {
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
 		{
@@ -379,6 +465,9 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 我的界面
 	else if (obj == ui.mine_label_widget) {
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
 		{
@@ -404,6 +493,9 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 文本工具
 	else if (obj == (m_appWidget+0))//指定某个QLabel
 	{
 		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
@@ -412,7 +504,7 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 
 			if (mouseEvent->button() == Qt::LeftButton)
 			{
-				ui.main_page->setCurrentIndex(1);
+				ui.main_page->setCurrentIndex(7);
 				return true;
 			}
 			else
@@ -425,10 +517,14 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 			return false;
 		}
 	}
+	#pragma endregion
+
+	#pragma region 默认
 	else
 	{
 		// pass the event on to the parent class
 		return QWidget::eventFilter(obj, event);
 	}
+	#pragma endregion
 }
 #pragma endregion

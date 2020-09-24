@@ -695,7 +695,7 @@ border-top-right-radius: 5px;</string>
          <string notr="true">background-color: rgb(255, 255, 255,90);</string>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>7</number>
         </property>
         <widget class="QWidget" name="codegen_page">
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -2336,20 +2336,10 @@ border-top-right-radius: 5px;</string>
          </layout>
         </widget>
         <widget class="QWidget" name="sqlbeautification_page">
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_11">
-            <item>
-             <widget class="QTextEdit" name="textEdit_sourcetxt"/>
-            </item>
-            <item>
-             <widget class="QTextEdit" name="textEdit_resulttxt"/>
-            </item>
-           </layout>
-          </item>
-         </layout>
+         <layout class="QHBoxLayout" name="horizontalLayout_12"/>
         </widget>
         <widget class="QWidget" name="myapps_page"/>
+        <widget class="QWidget" name="txt_tool"/>
        </widget>
       </item>
      </layout>

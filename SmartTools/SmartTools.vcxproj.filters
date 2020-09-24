@@ -29,6 +29,9 @@
     <Filter Include="customer widgets\apps">
       <UniqueIdentifier>{e055e7d7-ad41-4dec-a766-22b834eee4f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="customer widgets\editor">
+      <UniqueIdentifier>{4baca00e-71a6-4fd5-9825-51fc58fcde17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,9 @@
     <ClCompile Include="appWidget.cpp">
       <Filter>customer widgets\apps</Filter>
     </ClCompile>
+    <ClCompile Include="CodeEditor.cpp">
+      <Filter>customer widgets\editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="basewindow.h">
@@ -69,6 +75,9 @@
     <QtMoc Include="appWidget.h">
       <Filter>customer widgets\apps</Filter>
     </QtMoc>
+    <QtMoc Include="CodeEditor.h">
+      <Filter>customer widgets\editor</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="SmartTools.qrc">
@@ -81,6 +90,9 @@
     </ClInclude>
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LineNumberArea.h">
+      <Filter>customer widgets\editor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
