@@ -695,7 +695,7 @@ border-top-right-radius: 5px;</string>
          <string notr="true">background-color: rgb(255, 255, 255,90);</string>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>6</number>
         </property>
         <widget class="QWidget" name="codegen_page">
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -2349,6 +2349,7 @@ border-top-right-radius: 5px;</string>
           </item>
          </layout>
         </widget>
+        <widget class="QWidget" name="myapps_page"/>
        </widget>
       </item>
      </layout>

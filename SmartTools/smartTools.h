@@ -15,6 +15,8 @@
 #include <vector>  // for std::vector
 #include <iostream>
 #include "flatui.h"
+#include "appWidget.h"
+#include <QScrollArea>
 
 class SmartTools : public BaseWindow
 {
@@ -31,8 +33,12 @@ private:
 	utils myutils;
 	//初始化信号与槽
 	void initConnections();
+    appWidget* m_appWidget;
+    QGridLayout* m_qgdltLayout;
+    QVBoxLayout* m_qvbltLayout;
+    QScrollArea* m_qscarScroll;
 private slots:
 	void onPushButton_disassemblyClicked();
 	void onPushButton_selectdllfileClicked();
-	void onPushButton_changedlloutputpathClicked();
+	void onPushButton_changedlloutputpathClicked();    
 };

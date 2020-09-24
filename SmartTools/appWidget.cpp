@@ -14,8 +14,8 @@ appWidget::appWidget(QWidget *parent)
 	m_qbxltContainer->addWidget(m_qlbAppName);
 	this->setLayout(m_qbxltContainer);
 	this->setFixedSize(70,70);
-	setWindowFlags(Qt::FramelessWindowHint);//无窗体
-	setAttribute(Qt::WA_TranslucentBackground);//背景透明
+	this->setWindowFlags(Qt::FramelessWindowHint);//无窗体
+	this->setAttribute(Qt::WA_TranslucentBackground);//背景透明
 }
 
 appWidget::appWidget()
@@ -26,7 +26,9 @@ appWidget::appWidget()
 	m_qlbAppName = new QLabel();
 	m_qimgAppicon->setAlignment(Qt::AlignCenter);
 	m_qlbAppName->setAlignment(Qt::AlignCenter);
-	m_qlbAppName->setStyleSheet("size:21px;color:gray;font-weight:bold;");
+	m_qimgAppicon->setAttribute(Qt::WA_TranslucentBackground);
+	m_qlbAppName->setAttribute(Qt::WA_TranslucentBackground);
+	m_qlbAppName->setStyleSheet("size:21px;color:white;font-weight:bold;");
 	m_qbxltContainer->addWidget(m_qimgAppicon);
 	m_qbxltContainer->addWidget(m_qlbAppName);
 	this->setLayout(m_qbxltContainer);
@@ -42,7 +44,9 @@ appWidget::appWidget(QString name, QString icon) {
 	m_qlbAppName = new QLabel();
 	m_qimgAppicon->setAlignment(Qt::AlignCenter);
 	m_qlbAppName->setAlignment(Qt::AlignCenter);
-	m_qlbAppName->setStyleSheet("size:21px;color:gray;font-weight:bold;");
+	m_qlbAppName->setStyleSheet("size:21px;color:white;font-weight:bold;");
+	m_qimgAppicon->setAttribute(Qt::WA_TranslucentBackground);
+	m_qlbAppName->setAttribute(Qt::WA_TranslucentBackground);
 	m_qbxltContainer->addWidget(m_qimgAppicon);
 	m_qbxltContainer->addWidget(m_qlbAppName);
 	this->setLayout(m_qbxltContainer);
@@ -53,6 +57,7 @@ appWidget::appWidget(QString name, QString icon) {
 	//this->setStyleSheet("background:red;");
 	setWindowFlags(Qt::FramelessWindowHint);//无窗体
 	setAttribute(Qt::WA_TranslucentBackground);//背景透明
+
 }
 appWidget::~appWidget()
 {

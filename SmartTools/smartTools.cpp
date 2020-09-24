@@ -1,6 +1,6 @@
 ﻿#include "smartTools.h"
-
 using namespace std;
+
 #pragma region 界面
 SmartTools::SmartTools(QWidget *parent)
 	: BaseWindow(parent)
@@ -78,6 +78,7 @@ void SmartTools::initTitleBar()
 #pragma region 初始化控件
 void SmartTools::initControl()
 {
+	#pragma region 初始化主按钮
 	myutils.setIcon(ui.mianlabel_icon, ":/imgs/Resources/imgs/apps_color.png", { 40,40 });
 	myutils.setLabelContent(ui.mianlabel_txt, QStringLiteral("实用工具"));
 	ui.mainframe_verticalLayout->setAlignment(Qt::AlignHCenter);
@@ -93,10 +94,77 @@ void SmartTools::initControl()
 	myutils.setIcon(ui.minelabel_icon, ":/imgs/Resources/imgs/mine_color.png", { 40,40 });
 	myutils.setLabelContent(ui.minelabel_txt, QStringLiteral("我的"));
 	ui.mineframe_verticalLayout->setAlignment(Qt::AlignHCenter);
+	#pragma endregion
+
+	#pragma region 初始化样式表
 	//加载样式表
 	myutils.loadStyleSheet(this, "myapp");
 	ui.dllfileaddr_label->setStyleSheet("background-color:transparent");
 	ui.label_dllprojoutputpath->setStyleSheet("background-color:transparent");
+	ui.main_page->setCurrentIndex(6);
+	ui.myapps_page->setAttribute(Qt::WA_TranslucentBackground);
+	ui.plugin_page->setAttribute(Qt::WA_TranslucentBackground);
+	ui.disassem_page->setAttribute(Qt::WA_TranslucentBackground);
+	ui.mine_page->setAttribute(Qt::WA_TranslucentBackground);
+	ui.net_page->setAttribute(Qt::WA_TranslucentBackground);
+	#pragma endregion
+
+	#pragma region 初始化apps
+		m_appWidget = new appWidget[20];
+		
+		for (int i = 0; i < 20; i++) {
+			QImage* img;
+			
+			if (i == 0) {
+				img = new QImage(":/imgs/Resources/imgs/txttool.png");
+				(m_appWidget + i)->setAppName(QStringLiteral("文本工具"));
+			}
+			else {
+				img = new QImage(":/imgs/Resources/imgs/commingsoon.png");
+				(m_appWidget + i)->setAppName(QStringLiteral("敬请期待"));
+			}		
+			(m_appWidget + i)->setAppIcon(*img);
+			(m_appWidget + i)->installEventFilter(this);    // 安装事件过滤器
+		}
+
+		m_qgdltLayout = new QGridLayout();		
+		int cols(7), k(0);		
+		int rows = 20 / cols == 0 ? 20 / cols : (20 / cols) + 1;
+		for(int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				if (k >= 20) {
+					break;
+				}
+				m_qgdltLayout->addWidget(&m_appWidget[k], i, j, 1, 1);
+				k++;
+			}
+		}
+
+		// 设置水平间距
+		m_qgdltLayout->setHorizontalSpacing(10);
+		// 设置垂直间距
+		m_qgdltLayout->setVerticalSpacing(10);
+		// 设置外间距
+		m_qgdltLayout->setContentsMargins(10, 10, 10, 10);
+		m_qvbltLayout = new QVBoxLayout();
+		m_qvbltLayout->addLayout(m_qgdltLayout);
+		m_qvbltLayout->addSpacerItem(new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Expanding));
+		m_qscarScroll = new QScrollArea();
+		m_qscarScroll->setAttribute(Qt::WA_TranslucentBackground);
+		m_qscarScroll->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+		m_qscarScroll->setWidgetResizable(true);
+		QWidget* widget = new QWidget(this);
+		widget->setLayout(this->m_qvbltLayout);
+		widget->setAttribute(Qt::WA_TranslucentBackground);
+		this->m_qscarScroll->setWidget(widget);
+		this->m_qscarScroll->setFrameShape(QFrame::NoFrame);
+		this->m_qscarScroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);//隐藏横向滚动条
+		this->m_qscarScroll->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);//隐藏竖向滚动条
+		QVBoxLayout* mainLayout = new QVBoxLayout(this);
+		mainLayout->addWidget(this->m_qscarScroll);
+		ui.myapps_page->setLayout(mainLayout);
+	#pragma endregion
+
 }
 #pragma endregion
 
@@ -223,7 +291,7 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 				ui.disassem_label_widget->setStyleSheet("QWidget#disassem_label_widget{background-color: rgb(255, 255, 255,0);border-top-left-radius: 5px;border-top-right-radius: 5px;}QWidget#disassem_label_widget:hover{background-color: rgb(255, 255, 255,80);border-top-left-radius: 5px;border-top-right-radius: 5px;}");
 				ui.net_label_widget->setStyleSheet("QWidget#net_label_widget{background-color: rgb(255, 255, 255,0);border-top-left-radius: 5px;border-top-right-radius: 5px;}QWidget#net_label_widget:hover{background-color: rgb(255, 255, 255,80);border-top-left-radius: 5px;border-top-right-radius: 5px;}");
 				ui.mine_label_widget->setStyleSheet("QWidget#mine_label_widget{background-color: rgb(255, 255, 255,0);border-top-left-radius: 5px;border-top-right-radius: 5px;}QWidget#mine_label_widget:hover{background-color: rgb(255, 255, 255,80);border-top-left-radius: 5px;border-top-right-radius: 5px;}");
-				ui.main_page->setCurrentIndex(0);
+				ui.main_page->setCurrentIndex(6);
 				return true;
 			}
 			else
@@ -331,6 +399,27 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 				return false;
 			}
 		}
+		else 
+		{
+			return false;
+		}
+	}
+	else if (obj == (m_appWidget+0))//指定某个QLabel
+	{
+		if (event->type() == QEvent::MouseButtonPress) //鼠标点击
+		{
+			QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event); // 事件转换
+
+			if (mouseEvent->button() == Qt::LeftButton)
+			{
+				ui.main_page->setCurrentIndex(1);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 		else
 		{
 			return false;
@@ -343,4 +432,3 @@ bool SmartTools::eventFilter(QObject* obj, QEvent* event)
 	}
 }
 #pragma endregion
-

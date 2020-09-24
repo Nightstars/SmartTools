@@ -23,6 +23,12 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="customer widgets">
+      <UniqueIdentifier>{e17a2d62-99ff-4e53-8710-49370a80f5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="customer widgets\apps">
+      <UniqueIdentifier>{e055e7d7-ad41-4dec-a766-22b834eee4f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -43,6 +49,9 @@
     <ClCompile Include="flatui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="appWidget.cpp">
+      <Filter>customer widgets\apps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="basewindow.h">
@@ -56,6 +65,9 @@
     </QtMoc>
     <QtMoc Include="flatui.h">
       <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="appWidget.h">
+      <Filter>customer widgets\apps</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
