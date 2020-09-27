@@ -695,7 +695,7 @@ border-top-right-radius: 5px;</string>
          <string notr="true">background-color: rgb(255, 255, 255,90);</string>
         </property>
         <property name="currentIndex">
-         <number>7</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="codegen_page">
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1420,13 +1420,7 @@ border-top-right-radius: 5px;</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="plugin_page">
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="gridLayout"/>
-          </item>
-         </layout>
-        </widget>
+        <widget class="QWidget" name="plugin_page"/>
         <widget class="QWidget" name="disassem_page">
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
