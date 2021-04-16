@@ -32,51 +32,102 @@
     <Filter Include="customer widgets\editor">
       <UniqueIdentifier>{4baca00e-71a6-4fd5-9825-51fc58fcde17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="customer widgets\editor\header">
+      <UniqueIdentifier>{f67f82d5-d900-477a-85b5-d690ea59d9a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="customer widgets\apps\header">
+      <UniqueIdentifier>{952c009c-a8a0-40ab-aeb2-21c50377c9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{d2623f57-d9d8-49cf-b4aa-e43d0f96e451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\titlebar">
+      <UniqueIdentifier>{6cb246a7-4ad8-416c-b58e-7261e81ce428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\titlebar\header">
+      <UniqueIdentifier>{9061f551-c152-49ad-915d-bd69253dd6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\basewindow">
+      <UniqueIdentifier>{cd09f564-a076-459d-a004-abc9adb48ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\basewindow\header">
+      <UniqueIdentifier>{2dd6000d-b9b9-4529-9036-616eac62bbaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\basewindow\source">
+      <UniqueIdentifier>{e7e85dfc-6ea8-41f6-a05e-01d7bd80f5fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\titlebar\source">
+      <UniqueIdentifier>{43de9de6-73d9-4409-aa98-e5e21b60387d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="customer widgets\apps\sourse">
+      <UniqueIdentifier>{84cb3bd4-d024-4d16-8dd4-ef920706f77b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="customer widgets\editor\source">
+      <UniqueIdentifier>{67005d01-74db-49f5-92cd-37e9284fa604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\flatui">
+      <UniqueIdentifier>{34594f1b-8230-4ddd-8b77-3c94570c6c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\flatui\header">
+      <UniqueIdentifier>{faed2753-f7e4-43b6-a4d7-9cb651fe855d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\flatui\source">
+      <UniqueIdentifier>{f9ce22eb-122e-4a9c-a8e9-0d666cdf9401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\utils">
+      <UniqueIdentifier>{22ef3808-2649-41fd-bed3-f005d3404de7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\utils\header">
+      <UniqueIdentifier>{0874b987-47e5-4467-b020-3fb791b25fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\utils\source">
+      <UniqueIdentifier>{cbe07b56-2685-4d66-917d-fe80aa8f57df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="basewindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mytitlebar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="smartTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="flatui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="appWidget.cpp">
-      <Filter>customer widgets\apps</Filter>
+      <Filter>customer widgets\apps\sourse</Filter>
     </ClCompile>
     <ClCompile Include="CodeEditor.cpp">
-      <Filter>customer widgets\editor</Filter>
+      <Filter>customer widgets\editor\source</Filter>
+    </ClCompile>
+    <ClCompile Include="mytitlebar.cpp">
+      <Filter>common\titlebar\source</Filter>
+    </ClCompile>
+    <ClCompile Include="basewindow.cpp">
+      <Filter>common\basewindow\source</Filter>
+    </ClCompile>
+    <ClCompile Include="flatui.cpp">
+      <Filter>common\flatui\source</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>common\utils\source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="basewindow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="mytitlebar.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="smartTools.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="flatui.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="appWidget.h">
-      <Filter>customer widgets\apps</Filter>
+      <Filter>customer widgets\apps\header</Filter>
     </QtMoc>
     <QtMoc Include="CodeEditor.h">
-      <Filter>customer widgets\editor</Filter>
+      <Filter>customer widgets\editor\header</Filter>
+    </QtMoc>
+    <QtMoc Include="mytitlebar.h">
+      <Filter>common\titlebar\header</Filter>
+    </QtMoc>
+    <QtMoc Include="basewindow.h">
+      <Filter>common\basewindow\header</Filter>
+    </QtMoc>
+    <QtMoc Include="flatui.h">
+      <Filter>common\flatui\header</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -88,11 +139,11 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LineNumberArea.h">
-      <Filter>customer widgets\editor</Filter>
+      <Filter>customer widgets\editor\header</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>common\utils\header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
