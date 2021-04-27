@@ -25,5 +25,6 @@ void utils::loadStyleSheet(QWidget*obj,const QString& sheetName)
         QString styleSheet =obj->styleSheet();
         styleSheet += QLatin1String(file.readAll());
         obj->setStyleSheet(styleSheet);
+
     }
 }
